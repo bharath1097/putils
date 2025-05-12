@@ -1,0 +1,19 @@
+[project]
+name = "putils"
+version = "0.1.0"
+description = "Custom python utility functions"
+readme = "README.md"
+authors = [
+    { name = "Bharath Ghanta", email = "mail@bharath-g.in" }
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
