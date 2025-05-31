@@ -1,10 +1,9 @@
-class Position:
-    def __init__(self, row=0, col=0):
-        self.row = row
-        self.col = col
+from typing import NamedTuple
 
-    def __repr__(self):
-        return f'Position({self.row!r}, {self.col!r})'
+
+class Position(NamedTuple):
+    row: int
+    col: int
 
     def __bool__(self):
         return bool(self.row or self.col)
@@ -14,25 +13,9 @@ class Position:
         col = self.col + other.col
         return Position(row, col)
 
-    def __lt__(self, other):
-        return (self.row, self.col) < (other.row, other.col)
-
-    def __eq__(self, other):
-        if type(other) is type(self):
-            return (self.row, self.col) == (other.row, other.col)
-        else:
-            return False
-
-    def __hash__(self):
-        return hash((self.row, self.col))
-
 
 class Direction(Position):
-    def __init__(self, row=0, col=1):
-        super().__init__(row, col)
-
-    def __repr__(self):
-        return f'Direction({self.row!r}, {self.col!r})'
+    pass
 
 
 North = Direction(-1, 0)
